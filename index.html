@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: all 0.5s ease;
+        }
+
+        .page {
+            text-align: center;
+            max-width: 90%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h1{
+            text-align: start;
+            font-size: 4em;
+            margin-bottom: 44px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        h2 {
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #yes {
+            background: #32cd32;
+            color: white;
+        }
+
+        #yes:hover {
+            background: #228b22;
+            transform: scale(1.1);
+        }
+
+        #no {
+            background: #ff4500;
+            color: white;
+            position: relative;
+        }
+
+        #no:hover {
+            background: #dc143c;
+        }
+
+        /* Heart background animation */
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 2em;
+            animation: float 6s linear infinite;
+        }
+
+        .heart:nth-child(odd) {
+            animation-delay: -2s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            button {
+                font-size: 1.2em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts">
+        <div class="heart" style="left: 7%; animation-duration: 6s;">💖</div>
+        <div class="heart" style="left: 10%; animation-duration: 7s;">Jaan❤️</div>
+        <div class="heart" style="left: 20%; animation-duration: 7.6s;">💖</div>
+        <div class="heart" style="left: 30%; animation-duration: 8s;">❤️</div>
+        <div class="heart" style="left: 40%; animation-duration: 4s;">Jaan💖</div>
+        <div class="heart" style="left: 50%; animation-duration: 5.5s;">❤️</div>
+        <div class="heart" style="left: 60%; animation-duration: 7.5s;">💖</div>
+        <div class="heart" style="left: 70%; animation-duration: 6.5s;">Jaan❤️</div>
+        <div class="heart" style="left: 80%; animation-duration: 9s;">💖</div>
+        <div class="heart" style="left: 90%; animation-duration: 5.8s;">❤️</div>
+        <div class="heart" style="left: 85%; animation-duration: 6s;">Jaan❤️</div>
+    </div>
+
+    <div id="page1" class="page">
+         <h1>Valentine's Day</h1>
+        <h2>Will you marry me? ❤️</h2>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <div id="page2" class="page hidden">
+        <h2>Happy Valentine’s Day 💖 Baby💞😘</h2>
+        <h4>Ap meri life ki sab sy bahtreen khushi hain, jaan💗</h4>
+        <h4>Jab apsy bat na ho na to dill-e-nadan bht bechain ho jata hai😔🥺</h4>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yes');
+        const noBtn = document.getElementById('no');
+        const page1 = document.getElementById('page1');
+        const page2 = document.getElementById('page2');
+
+        // Array of funny texts for the No button
+        const noTexts = [
+            "Baby, Are you sure? 😢",
+            "Yrrroo Think again! 💔",
+            "Darling💝, Don't be mean! 🙏",
+            "Mera bachha 🥺",
+            "I'm waiting... ❤️",
+            "You are my life",
+            "Come on, Baby! 💕",
+            "Just kidding, say yes! 😂",
+            "One more try? 😘"
+        
+        ];
+
+        let textIndex = 0;
+
+        // Function to move No button to random position and change text
+        function handleNoClick() {
+            // Change text
+            textIndex = (textIndex + 1) % noTexts.length;
+            noBtn.textContent = noTexts[textIndex];
+
+            // Move to random position
+            const maxX = window.innerWidth - noBtn.offsetWidth;
+            const maxY = window.innerHeight - noBtn.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        // Event listener for No button (only on click for phone compatibility)
+        noBtn.addEventListener('click', handleNoClick);
+
+        // Event listener for Yes button
+        yesBtn.addEventListener('click', () => {
+            page1.classList.add('hidden');
+            page2.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
