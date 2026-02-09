@@ -72,6 +72,7 @@
 
         #no:hover {
             background: #dc143c;
+            transform: scale(1.1);
         }
 
         /* Heart background animation */
@@ -111,9 +112,38 @@
                 padding: 12px 25px;
             }
         }
+        .site-footer{
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                background: #111;
+                color: #fff;
+                font-size: 14px;
+                z-index: 999;
+
+         }
+
+        .pictures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pictures img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
     </style>
 </head>
 <body>
+    
     <div class="hearts">
         <div class="heart" style="left: 7%; animation-duration: 6s;">💖</div>
         <div class="heart" style="left: 10%; animation-duration: 7s;">Jaan❤️</div>
@@ -136,6 +166,38 @@
     </div>
 
     <div id="page2" class="page hidden">
+        <h2>You said Yes! 💕</h2>
+        <h3>That makes me the happiest person alive! 😍</h3>
+        <h4>From the moment I met you, I knew you were special. 💖</h4>
+        <h4>Your smile lights up my world every day. 🌟</h4>
+        <button id="next2">Next</button>
+    </div>
+
+    <div id="page3" class="page hidden">
+        <h2>My Love for You 💞</h2>
+        <h3>Grows stronger with every heartbeat. ❤️</h3>
+        <h4>You are my everything, my dream come true. 😘</h4>
+        <h4>Thank you for being you, Fatima Jaan. 💗</h4>
+        <button id="next3">Next</button>
+    </div>
+
+    <div id="page4" class="page hidden">
+        <h2>Forever and Always 🤗</h2>
+        <h3>I promise to love you endlessly. 💝</h3>
+        <h4>Through every joy and challenge, we'll be together. 👫</h4>
+        <h4>You complete me in ways I never imagined. 🥰</h4>
+        <button id="next4">Next</button>
+    </div>
+
+    <div id="page5" class="page hidden">
+        <h2>Our Beautiful Memories 💖</h2>
+        <div class="pictures">
+            <img src="https://via.placeholder.com/200x200/ff69b4/ffffff?text=Memory+1" alt="Memory 1">
+        </div>
+        <button id="next5">Next</button>
+    </div>
+
+    <div id="page6" class="page hidden">
         <h2>Happy Valentine’s Day 💖 Baby💞😘</h2>
         <h3>HAPPY BIRTHDAY, DARLING❣🥰❤</h3>
         <H4>Allah pak apko zindagi ki saaari khushian ata kry, Ameen❣</H4>
@@ -147,11 +209,23 @@
         <h3>I LOVE YOU SOO MUCH Yrrrrrr</h3>
     </div>
 
+    <footer class="site-footer">
+        © <span id="year"></span> Made By Your Husband😘🥰
+    </footer>
+
     <script>
         const yesBtn = document.getElementById('yes');
         const noBtn = document.getElementById('no');
         const page1 = document.getElementById('page1');
         const page2 = document.getElementById('page2');
+        const page3 = document.getElementById('page3');
+        const page4 = document.getElementById('page4');
+        const page5 = document.getElementById('page5');
+        const page6 = document.getElementById('page6');
+        const next2Btn = document.getElementById('next2');
+        const next3Btn = document.getElementById('next3');
+        const next4Btn = document.getElementById('next4');
+        const next5Btn = document.getElementById('next5');
 
         // Array of funny texts for the No button
         const noTexts = [
@@ -193,6 +267,30 @@
             page1.classList.add('hidden');
             page2.classList.remove('hidden');
         });
+
+        // Event listeners for Next buttons
+        next2Btn.addEventListener('click', () => {
+            page2.classList.add('hidden');
+            page3.classList.remove('hidden');
+        });
+
+        next3Btn.addEventListener('click', () => {
+            page3.classList.add('hidden');
+            page4.classList.remove('hidden');
+        });
+
+        next4Btn.addEventListener('click', () => {
+            page4.classList.add('hidden');
+            page5.classList.remove('hidden');
+        });
+
+        next5Btn.addEventListener('click', () => {
+            page5.classList.add('hidden');
+            page6.classList.remove('hidden');
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
+```
