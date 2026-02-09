@@ -38,7 +38,7 @@
         }
 
         h2 {
-            font-size: 3em;
+            font-size: 2em;
             margin-bottom: 40px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
@@ -134,11 +134,14 @@
         }
 
         .pictures img {
-            max-width: 200px;
+            max-width: 220px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
+        .hi {
+            color: black;
+        } 
 
     </style>
 </head>
@@ -166,34 +169,41 @@
     </div>
 
     <div id="page2" class="page hidden">
-        <h2>You said Yes! 💕</h2>
-        <h3>That makes me the happiest person alive! 😍</h3>
-        <h4>From the moment I met you, I knew you were special. 💖</h4>
-        <h4>Your smile lights up my world every day. 🌟</h4>
+        <h2>Aahhh mera bachhha💕</h2>
+        <h3>Bht acha faisla kiya hai😍</h3>
+        <h4>wase bhi no kr ky kiya he kar lin gi pp🤭💖</h4>
+        <h4>InshaAllah, Biwi to apni he banao ga apko main🤗💗. 🌟</h4>
         <button id="next2">Next</button>
     </div>
 
     <div id="page3" class="page hidden">
-        <h2>My Love for You 💞</h2>
-        <h3>Grows stronger with every heartbeat. ❤️</h3>
-        <h4>You are my everything, my dream come true. 😘</h4>
-        <h4>Thank you for being you, Fatima Jaan. 💗</h4>
+        <h2>Mujy apsy ISHQ ho gya hai, Sweatheart 💞</h2>
+        <h3 class="hi">❤️Apka wajood intehahi azeez hai mujhe❤️</h3>
+        <h3 class="hi">❤️Apka siwa nhi ata kisi py pyar mujhe❤️</h3>
+        <h4>Ap mery liya sab kuch hain😘❤, except SISTER😁.</h4>
+        <h4>Thank you for being with me, Begum Jii. 💗</h4>
         <button id="next3">Next</button>
     </div>
 
     <div id="page4" class="page hidden">
-        <h2>Forever and Always 🤗</h2>
-        <h3>I promise to love you endlessly. 💝</h3>
-        <h4>Through every joy and challenge, we'll be together. 👫</h4>
-        <h4>You complete me in ways I never imagined. 🥰</h4>
+        <h2>11 FEB, Promise Day 🤗</h2>
+        <h3>I promise to love you endlessly.💝</h3>
+        <h4>Ma hamesha apky sath hon, chahy kuch bhi ho jaye,
+        bss koi bhi bat ho na mujh pr trust kr ky bata dena mujy.</h4>
+        <h4>ya mat sochna ky ma kia kahon ga etc, bss itna yaad rakhna ma har haal ma apky sath rahon ga. 👫</h4>
+        <h4>Ok meri pyari sii jaan🥰</h4>
         <button id="next4">Next</button>
     </div>
 
     <div id="page5" class="page hidden">
-        <h2>Our Beautiful Memories 💖</h2>
+        <h2>My Beautifull World💖</h2>
         <div class="pictures">
             <img src="personal.jpeg" alt="Memory 1">
         </div>
+        <h3>Apki ya chamakti hoi ankhain👀</h3>
+        <h3>In ankho ma jo nasha hai, kisi or chiz ma nhi🤤</h3>
+        <h3>Ya ankhain bht Anmol hain, insy bahty anso, vo anso nhi qimti Moti hain😘❤</h3>
+        <h3>Fazol chizon pr na zayan kriya ga, bht azeez hain mujy😔</h3>
         <button id="next5">Next</button>
     </div>
 
@@ -207,7 +217,20 @@
         <h4>Apsy meri life mukamal ho gi😚🤭💝</h4>
         <h4>I just want you👉👈🥺, Nothing else</h4>
         <h3>I LOVE YOU SOO MUCH Yrrrrrr</h3>
+        <button id="next6">Next</button>
     </div>
+
+    <div id="page7" class="page hidden">
+        <h2>Forever Together & WISHES💕</h2>
+        <h3>This is the end, but the beginning of our forever. 😍</h3>
+        <h4>Meri Jaan. I can't wait to spend the rest of my life with you. ❤️</h4>
+        <h4>Allah pak apko ذندگی ma bht خوش rakhain❣️</h4>
+        <h4>Ap ko parshaniyon, dukh, tension, azmaish sy mahfoz rakhy Ameen♥️🤗</h4>
+        <h4>Allah pak apki dua Qabool krin, Ameen🎉</h4>
+        <h4>Khushiyon bhari Long lasting ذندگی ata krin Ameen💝🤌</h4>
+        <h4>With all my heart, Your Husband. 💖</h4>
+    </div>
+    
 
     <footer class="site-footer">
         © <span id="year"></span> Made By Your Husband😘🥰
@@ -222,10 +245,13 @@
         const page4 = document.getElementById('page4');
         const page5 = document.getElementById('page5');
         const page6 = document.getElementById('page6');
+        const page7 = document.getElementById('page7');
         const next2Btn = document.getElementById('next2');
         const next3Btn = document.getElementById('next3');
         const next4Btn = document.getElementById('next4');
         const next5Btn = document.getElementById('next5');
+        const next6Btn = document.getElementById('next6');
+        
 
         // Array of funny texts for the No button
         const noTexts = [
@@ -289,9 +315,14 @@
             page6.classList.remove('hidden');
         });
 
+        next6Btn.addEventListener('click', () => {
+            page6.classList.add('hidden');
+            page7.classList.remove('hidden');
+        });
+        
+        
+
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
-```
-
