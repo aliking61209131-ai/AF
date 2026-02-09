@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #ff69b4, #ff1493);
             color: white;
-            margin: 0;
+            margin: 20;
             padding: 0;
             overflow: hidden;
             display: flex;
@@ -17,6 +17,9 @@
             align-items: start;
             height: 100vh;
             transition: all 0.5s ease;
+            border-radius: 20px 0 20px 0; /* Top-left and bottom-right border-radius */
+            border-color: #dc143c;
+            border: 5px;
         }
 
         .page {
@@ -139,9 +142,38 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        .hi {
+        .hi-group {
+            border: 2px solid rgb(13, 231, 122);
+            padding: 10px;
+            border-radius: 5px;
+            background-color: white;
             color: black;
-        } 
+            display: inline-block;
+            margin: 10px;
+            font-size: 10px;
+        }
+        .he-hu-group {
+            border: 2px solid #0faeec;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 10px;
+            background-color: white;
+            color: black;
+            display: inline-block;
+            margin: 10px;
+        }
+        .val{
+           font-size: medium;
+        }
+        .shair {
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 10px;
+            background-color: white;
+            color: #111;
+        }
 
     </style>
 </head>
@@ -163,23 +195,34 @@
 
     <div id="page1" class="page">
          <h2>Valentine's Day💞</h2>
-        <h2> Fatima Jaan💖, Will you marry me? ❤️</h2>
+        <h2 class="val"> Fatima Jaan💖, Will you marry me? ❤️</h2>
         <button id="yes">Yes</button>
         <button id="no">No</button>
     </div>
 
     <div id="page2" class="page hidden">
-        <h2>Aahhh mera bachhha💕</h2>
+        <h2>Aahhh mera bachhha agya💕</h2>
         <h3>Bht acha faisla kiya hai😍</h3>
-        <h4>wase bhi no kr ky kiya he kar lin gi pp🤭💖</h4>
-        <h4>InshaAllah, Biwi to apni he banao ga apko main🤗💗. 🌟</h4>
+        <h4>wase bhi no kr ky kiya he kar lin gi ap🤭💖</h4>
+        <h4>InshaAllah, Biwi to ma apni he banao ga apko🤗💗. 🌟</h4>
+        <h4>Apki muskurahat mujhe har gam bhula deti hai! 😊💕</h4>
+        <h4>Har pal apke bina adhura lagta hai, jaan. 🥺❤️</h4>
         <button id="next2">Next</button>
     </div>
 
     <div id="page3" class="page hidden">
-        <h2>Mujy apsy ISHQ ho gya hai, Sweatheart 💞</h2>
-        <h3 class="hi">❤️Apka wajood intehahi azeez hai mujhe❤️</h3>
-        <h3 class="hi">❤️Apka siwa nhi ata kisi py pyar mujhe❤️</h3>
+        <h2>8 FEB, Propose Day 💞</h2>
+        <div class="hi-group">
+            <h3>❤️Apka wajood intehahi azeez hai mujhe❤️</h3>
+            <h3>❤️Apka siwa nhi ata kisi py pyar mujhe❤️</h3>
+        </div>
+        <br>
+        <div class="he-hu-group">
+            <h3>Dill sy pyar kiya hai, To💖</h3>
+            <h3>Dill sy nibhayenge😚</h3>
+            <h3>Jab tak zinda hain😘</h3>
+            <h3>Sirf Ap he ko chahainge🥰</h3>
+        </div>
         <h4>Ap mery liya sab kuch hain😘❤, except SISTER😁.</h4>
         <h4>Thank you for being with me, Begum Jii. 💗</h4>
         <button id="next3">Next</button>
@@ -201,9 +244,15 @@
             <img src="personal.jpeg" alt="Memory 1">
         </div>
         <h3>Apki ya chamakti hoi ankhain👀</h3>
-        <h3>In ankho ma jo nasha hai, kisi or chiz ma nhi🤤</h3>
         <h3>Ya ankhain bht Anmol hain, insy bahty anso, vo anso nhi qimti Moti hain😘❤</h3>
         <h3>Fazol chizon pr na zayan kriya ga, bht azeez hain mujy😔</h3>
+        <div class="shair">
+            <h4><b>Kuch arz kiya hai:</b> <br> Teri ankhein jo hain, wohi mera jahaan hai,<br>
+            Unmein chhupi hai woh kahani, jo kabhi na khatam hai.<br>
+            Har nazar mein pyar ka rang, har pal mein sukoon,<br>
+            Tere bina adhuri zindagi, tu hai mera junoon. 💖👀</h4>
+        </div>
+        <br>
         <button id="next5">Next</button>
     </div>
 
