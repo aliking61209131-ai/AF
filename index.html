@@ -180,7 +180,8 @@
     </style>
 </head>
 <body>
-    
+   
+
     <div class="hearts">
         <div class="heart" style="left: 7%; animation-duration: 6s;">💖</div>
         <div class="heart" style="left: 10%; animation-duration: 7s;">Jaan❤️</div>
@@ -290,6 +291,9 @@
         © <span id="year"></span> Made By Your Husband😘🥰
     </footer>
 
+    <!-- Added audio element for the sound -->
+    <audio id="proposalSound" src="love.mp3.mp3" preload="auto"></audio> <!-- Replace with your desired sound URL -->
+
     <script>
         const yesBtn = document.getElementById('yes');
         const noBtn = document.getElementById('no');
@@ -346,6 +350,11 @@
         yesBtn.addEventListener('click', () => {
             page1.classList.add('hidden');
             page2.classList.remove('hidden');
+            // Added sound playback on Yes button click
+            const audio = document.getElementById('proposalSound');
+            audio.playbackRate = 1.5;
+            audio.loop = true;
+            audio.play().catch(error => console.log('Audio play failed:', error)); // To handle any play errors without breaking the page
         });
 
         // Event listeners for Next buttons
