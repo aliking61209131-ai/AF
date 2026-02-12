@@ -453,7 +453,7 @@ video{
             // Stop sound1 and start sound2
             sound1.pause();
             sound1.currentTime = 0;
-            sound2.playbackRate = 1.1;
+            sound2.playbackRate = 1;
             sound2.loop = true;
             sound2.play().catch(error => console.log('Audio play failed:', error));
         });
@@ -469,7 +469,7 @@ video{
             // Stop sound2 and start sound3 for page7
             sound2.pause();
             sound2.currentTime = 0;
-            sound3.playbackRate = 1.4;
+            sound3.playbackRate = 1.2;
             sound3.loop = true;
             sound3.play().catch(error => console.log('Audio play failed:', error));
             video.play().catch(error => console.log('Video play failed:', error));
@@ -502,3 +502,4 @@ video{
     </script>
 </body>
 </html>
+
