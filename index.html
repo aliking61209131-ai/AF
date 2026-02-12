@@ -5,189 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Proposal</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff69b4, #ff1493);
-            color: white;
-            margin: 20;
-            padding: 0;
-            overflow: scroll;
-            display: flex;
-            justify-content: center;
-            align-items: start;
-            height: 100vh;
-            transition: all 0.5s ease;
-            border-radius: 20px 0 20px 0; /* Top-left and bottom-right border-radius */
-            border: 5px solid #dc143c;
-            text-shadow: 1px 1.4px 3px rgba(0, 0, 0, 0.5);
-            
-        }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        .page {
-            text-align: center;
-            max-width: 90%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+*{
+    box-sizing:border-box;
+}
 
-        .hidden {
-            display: none;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#ff5fa2,#ff86c8,#ffb3da);
+    color: white;
+    margin:0;
+    padding:0;
+    overflow:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
 
-        h1{
-            text-align: start;
-            font-size: 4em;
-            margin-bottom: 100px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
+/* main card */
+.page{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:25px 22px 40px;
+    max-width: 420px;
+    width:90%;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    animation:fadeIn .6s ease;
+    position:relative;
+}
 
-        h2 {
-            font-size: 1.7em;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(.95);}
+    to{opacity:1; transform:scale(1);}
+}
 
-        button {
-            font-size: 1.5em;
-            padding: 15px 30px;
-            margin: 10px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+.hidden{
+    display:none;
+}
 
-        #yes {
-            background: #32cd32;
-            color: white;
-        }
+h1,h2,h3,h4{
+    line-height:1.5;
+}
 
-        #yes:hover {
-            background: #228b22;
-            transform: scale(1.1);
-        }
+h2{
+    font-weight:600;
+    margin-bottom:15px;
+    color: #222;
+}
 
-        #no {
-            background: #ff4500;
-            color: white;
-            position: relative;
-        }
+.val{
+    font-size:1.1rem;
+}
 
-        #no:hover {
-            background: #dc143c;
-            transform: scale(1.1);
-        }
+/* buttons */
 
-        /* Heart background animation */
-        .hearts {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
+button{
+    border:none;
+    padding:13px 28px;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    margin:8px;
+    transition:.3s ease;
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+    font-weight:600;
+}
 
-        .heart {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 2em;
-            animation: float 6s linear infinite;
-        }
+#yes{
+    background:linear-gradient(135deg,#00ff99,#1dd1a1);
+    color:#033;
+}
 
-        .heart:nth-child(odd) {
-            animation-delay: -2s;
-        }
+#yes:hover{
+    transform:translateY(-4px) scale(1.05);
+}
 
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
-        }
+#no{
+    background:linear-gradient(135deg,#ff4d4d,#ff6b6b);
+    color:white;
+    position:relative;
+}
 
-        /* Mobile responsiveness */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
-            button {
-                font-size: 1.2em;
-                padding: 12px 25px;
-            }
-        }
-        .site-footer{
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
-                color: #000000;
-                font-size: 14px;
-                z-index: 999;
-                font-style: italic;
-                font-weight: bolder;
-         }
+#no:hover{
+    transform:scale(1.05);
+}
 
-        .pictures {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+/* hearts animation */
 
-        .pictures img {
-            max-width: 220px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        .hi-group {
-            border: 2px solid rgb(13, 231, 122);
-            padding: 10px;
-            border-radius: 5px;
-            background-color: white;
-            color: black;
-            display: inline-block;
-            margin: 7px;
-            font-size: 12px;
-        }
-        .he-hu-group {
-            border: 2px solid #0faeec;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 13px;
-            background-color: white;
-            color: black;
-            display: inline-block;
-            margin: 7px;
-        }
-        .val{
-           font-size: large;
-        }
-        .shair {
-            border: 2px solid white;
-            padding: 10px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 10px;
-            background-color: white;
-            color: #111;
-        }
-        .he-group{
-            border: 2px solid #0faeec;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 10px;
-            background-color: white;
-            color: black;
-            display: inline-block;
-            margin: 8px;
-            margin-bottom: 5;
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
 
-        }
-    </style>
+.heart{
+    position:absolute;
+    font-size:1.6rem;
+    animation: floatUp linear infinite;
+    opacity:.8;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(110vh) scale(.8);
+    }
+    to{
+        transform:translateY(-20vh) scale(1.2);
+    }
+}
+
+/* image gallery */
+
+.pictures{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.pictures img{
+    width:150px;
+    border-radius:14px;
+    box-shadow:0 10px 20px rgba(0,0,0,.35);
+    transition:.3s;
+}
+
+.pictures img:hover{
+    transform:scale(1.05);
+}
+
+/* poem & boxes */
+
+.hi-group,
+.he-hu-group,
+.he-group,
+.shair{
+    background:rgba(255,255,255,.85);
+    color:#222;
+    border-radius:12px;
+    padding:12px;
+    margin:10px auto;
+    width:fit-content;
+    max-width:100%;
+    box-shadow:0 6px 14px rgba(0,0,0,.2);
+}
+.he-group{
+    font-size: 10px;
+}
+
+/* videos */
+
+video{
+    border-radius:16px;
+    box-shadow:0 10px 20px rgba(0,0,0,.35);
+    margin:12px 0;
+}
+
+/* footer */
+
+.site-footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    text-align:center;
+    padding:8px 0;
+    font-size:12px;
+    color:#fff;
+    font-weight:500;
+    background:linear-gradient(to right, rgba(0,0,0,.15), rgba(0,0,0,.05));
+    backdrop-filter:blur(4px);
+}
+@keyframes pageIn {
+    from{
+        opacity:0;
+        transform:translateY(12px) scale(.98);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+
+/* mobile */
+
+@media(max-width:500px){
+    .page{
+        padding:20px 15px 35px;
+    }
+
+    h2{
+        font-size:1.2rem;
+    }
+
+    h3,h4{
+        font-size:.9rem;
+    }
+
+    button{
+        font-size:.9rem;
+        padding:11px 22px;
+    }
+
+    .pictures img{
+        width:120px;
+    }
+    .span{
+        font-size: 20px;
+    }
+}
+</style>
+
 </head>
 <body>
    
@@ -207,8 +242,7 @@
     </div>
 
     <div id="page1" class="page">
-        <h2>Aahhh Mera Jaannuu agyi💕</h2>
-        <h3>Kitna Special Din hai Aj ka😋, <br> Aj ky din ap ain thi is duniya main😍🤗</h3>
+        <h2>Aahhh mera bachhha agya💕</h2>
          <h3>Apko meny 2nd Oct 2021 ko propose kiya tha. <br>Mgr mujy bht pahly sy apsy muhabat hai Jaan💖
         <br>Ap main meri Jan basti hai Jana💗</h3>
         <h2 class="val"> Fatima Jaan💖, Will you marry me? ❤️</h2>
@@ -219,7 +253,7 @@
     <div id="page2" class="page hidden">
         <h2>Welcome Missiz Ali🥰</h2>
         <h3>InshaAllah, I will prove that your decision is one of the best</h3>
-        <h4>wase bhi no kr ky kiya he kar lin gi ap🤭💖</h4>
+        <h4>wase bhi no kr ky kiya he kar lain gi ap🤭💖</h4>
         <h4>InshaAllah, Biwi to ma apni he banao ga apko🤗💗. 🌟</h4>
         <h4> Jaannuu, Apki muskurahat mujhy bht pasand hai yrrr!, <br>Isi trhan hasti muskurati raha krin. 😊💕</h4>
         <h4>Har pal apke bina adhura lagta hai, Jaan🥺. <br> bash jldi shy apko hasil krna haii 🥺❤️</h4>
@@ -287,19 +321,23 @@
 
     <div id="page7" class="page hidden">
         <h2>Our Special Moments 💕</h2>
-        <video id="proposalVideo" src="special1.mp4" loop autoplay style="width: 220px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
-        <h4>Jaannuu🥰, Yrrr ma apka hath pkr chalna chahta hon sari Zindagii ky liya🥺</h4>
-        <h3>I LOVE YOUH DHAAIR SARA😘, CUTE PRINCESS</h3>
+        <video id="proposalVideo" src="special1.mp4" loop autoplay style="max-width: 220px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
+        <h4>Jaannuu🥰, Yrrr ma apka hath pkr kr chalna chahta hon sari Zindagii ky liya🥺</h4>
+        <h3>I LOVE YOUH DHAAIR SARA😘,</h3> <h2>MY CUTE PRINCESS</h2>
         <button id="next7">Next</button>
     </div>
 
     <div id="page8" class="page hidden">
-        <video id="proposalVideo2" src="happy.mp4" loop autoplay style="max-width: 250px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
+        <video id="proposalVideo2" src="happy.mp4" loop autoplay style="width: 250px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
       <div class="he-group">
-        <h2>Happy Birthday To You🎂🤞
+        <h2><span class="span">___🎂___</span>
+        <br>Happy Birthday To You🎂🤞
         <br>Happy Birthday To You🎂
         <br>Happy Birthday My Dear Fatima🤍💟
-        <br>Happy Birthday To Youuuuuu🎂😘🥰</h2>
+        <br>Happy Birthday To Youuuuuu🎂😘🥰
+        <br>Aj 14 FEBRUARY, A Special Day🤗😎.
+        <br>Ma itna excited hon is din ky liya🥰
+        <br>Jitni mujhy khushi hoo rhi hai na itni kisi ko bhi nhi hogii😋</h2>
        </div> <br>
      <button id="next8">Next</button>
     </div> 
@@ -463,4 +501,3 @@
     </script>
 </body>
 </html>
-
