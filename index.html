@@ -150,8 +150,8 @@
             background-color: white;
             color: black;
             display: inline-block;
-            margin: 10px;
-            font-size: 13px;
+            margin: 7px;
+            font-size: 12px;
         }
         .he-hu-group {
             border: 2px solid #0faeec;
@@ -161,7 +161,7 @@
             background-color: white;
             color: black;
             display: inline-block;
-            margin: 10px;
+            margin: 7px;
         }
         .val{
            font-size: large;
@@ -175,8 +175,18 @@
             background-color: white;
             color: #111;
         }
-        
+        .he-group{
+            border: 2px solid #0faeec;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 10px;
+            background-color: white;
+            color: black;
+            display: inline-block;
+            margin: 8px;
+            margin-bottom: 5;
 
+        }
     </style>
 </head>
 <body>
@@ -197,7 +207,7 @@
     </div>
 
     <div id="page1" class="page">
-        <h2>Valentine's Day💞</h2>
+        <h2>Aahhh mera bachhha agya💕</h2>
          <h3>Apko meny 2nd Oct 2021 ko propose kiya tha. <br>Mgr mujy bht pahly sy apsy muhabat hai Jaan💖
         <br>Ap main meri Jan basti hai Jana💗</h3>
         <h2 class="val"> Fatima Jaan💖, Will you marry me? ❤️</h2>
@@ -206,12 +216,12 @@
     </div>
 
     <div id="page2" class="page hidden">
-        <h2>Aahhh mera bachhha agya💕</h2>
-        <h3>Bht acha faisla kiya hai😍</h3>
+        <h2>Welcome Missiz Ali🥰</h2>
+        <h3>InshaAllah, I will prove that your decision in one of the best</h3>
         <h4>wase bhi no kr ky kiya he kar lin gi ap🤭💖</h4>
         <h4>InshaAllah, Biwi to ma apni he banao ga apko🤗💗. 🌟</h4>
-        <h4>Apki muskurahat mujhe har gam bhula deti hai! 😊💕</h4>
-        <h4>Har pal apke bina adhura lagta hai, jaan. 🥺❤️</h4>
+        <h4> Jaannuu, Apki muskurahat mujhy bht pasand hai yrrr!, <br>Isi trhan hasti muskurati raha krin. 😊💕</h4>
+        <h4>Har pal apke bina adhura lagta hai, Jaan🥺. <br> bash jldi shy apko hasil krna haii 🥺❤️</h4>
         <button id="next2">Next</button>
     </div>
 
@@ -276,13 +286,24 @@
 
     <div id="page7" class="page hidden">
         <h2>Our Special Moments 💕</h2>
-        <video id="proposalVideo" src="special1.mp4" loop autoplay style="max-width: 220px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
+        <video id="proposalVideo" src="special2.mp4" loop autoplay style="max-width: 220px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
         <h4>Jaannuu🥰, Yrrr ma apka hath pkr chalna chahta hon sari Zindagii ky liya🥺</h4>
         <h3>I LOVE YOUH DHAAIR SARA😘, CUTE PRINCESS</h3>
         <button id="next7">Next</button>
     </div>
 
     <div id="page8" class="page hidden">
+        <video id="proposalVideo" src="happy.mp4" loop autoplay style="max-width: 250px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
+      <div class="he-group">
+        <h2>Happy Birthday To You🎂🤞
+        <br>Happy Birthday To You🎂
+        <br>Happy Birthday My Dear Fatima🤍💟
+        <br>Happy Birthday To Youuuuuu🎂😘🥰</h2>
+       </div> <br>
+     <button id="next8">Next</button>
+    </div> 
+
+    <div id="page9" class="page hidden">
         <h2>Forever Together & WISHES💕</h2>
         <h3>This is the end, but the beginning of our forever. 😍</h3>
         <h4>Meri Jaan. I can't wait to spend the rest of my life with you. ❤️</h4>
@@ -303,6 +324,7 @@
     <audio id="sound1" src="tasawer.mpeg" preload="auto"></audio>
     <audio id="sound2" src="muskurany.mpeg" preload="auto"></audio>
     <audio id="sound3" src="meryhath.mpeg" preload="auto"></audio>
+    <audio id="sound4" src="happy.mpeg" preload="auto"></audio>
 
     <script>
         const yesBtn = document.getElementById('yes');
@@ -315,17 +337,19 @@
         const page6 = document.getElementById('page6');
         const page7 = document.getElementById('page7');
         const page8 = document.getElementById('page8');
+        const page9 = document.getElementById('page9');
         const next2Btn = document.getElementById('next2');
         const next3Btn = document.getElementById('next3');
         const next4Btn = document.getElementById('next4');
         const next5Btn = document.getElementById('next5');
         const next6Btn = document.getElementById('next6');
         const next7Btn = document.getElementById('next7');
+        const next8Btn = document.getElementById('next8');
         const sound1 = document.getElementById('sound1');
         const sound2 = document.getElementById('sound2');
         const sound3 = document.getElementById('sound3');
         const video = document.getElementById('proposalVideo');
-
+        const sound4 = document.getElementById('sound4');
         // Array of funny texts for the No button
         const noTexts = [
             "Baby, Are you sure? 😢",
@@ -388,7 +412,7 @@
             // Stop sound1 and start sound2
             sound1.pause();
             sound1.currentTime = 0;
-            sound2.playbackRate = 1.3;
+            sound2.playbackRate = 1.1;
             sound2.loop = true;
             sound2.play().catch(error => console.log('Audio play failed:', error));
         });
@@ -416,14 +440,24 @@
             // Stop sound3
             sound3.pause();
             sound3.currentTime = 0;
-            sound1.playbackRate = 1.2;
+            sound4.playbackRate = 1;
+            sound4.loop = true;
+            sound4.play().catch(error => console.log('Audio play failed:', error));
+            video.play().catch(error => console.log('Video play failed:', error));
+        });
+
+        next8Btn.addEventListener('click', () => {
+            page8.classList.add('hidden');
+            page9.classList.remove('hidden');
+            // Stop sound3
+            sound4.pause();
+            sound4.currentTime = 0;
+            sound1.playbackRate = 1.12;
             sound1.loop = true;
             sound1.play().catch(error => console.log('Audio play failed:', error));
         });
-
+    
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
-
-
