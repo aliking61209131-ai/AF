@@ -286,14 +286,14 @@
 
     <div id="page7" class="page hidden">
         <h2>Our Special Moments 💕</h2>
-        <video id="proposalVideo" src="special2.mp4" loop autoplay style="max-width: 220px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
+        <video id="proposalVideo" src="special1.mp4" loop autoplay style="max-width: 220px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
         <h4>Jaannuu🥰, Yrrr ma apka hath pkr chalna chahta hon sari Zindagii ky liya🥺</h4>
         <h3>I LOVE YOUH DHAAIR SARA😘, CUTE PRINCESS</h3>
         <button id="next7">Next</button>
     </div>
 
     <div id="page8" class="page hidden">
-        <video id="proposalVideo" src="happy.mp4" loop autoplay style="max-width: 250px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
+        <video id="proposalVideo2" src="happy.mp4" loop autoplay style="max-width: 250px; height: 220px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);"></video><br>
       <div class="he-group">
         <h2>Happy Birthday To You🎂🤞
         <br>Happy Birthday To You🎂
@@ -349,6 +349,7 @@
         const sound2 = document.getElementById('sound2');
         const sound3 = document.getElementById('sound3');
         const video = document.getElementById('proposalVideo');
+        const video2 = document.getElementById('proposalVideo2');
         const sound4 = document.getElementById('sound4');
         // Array of funny texts for the No button
         const noTexts = [
@@ -443,7 +444,7 @@
             sound4.playbackRate = 1;
             sound4.loop = true;
             sound4.play().catch(error => console.log('Audio play failed:', error));
-            video.play().catch(error => console.log('Video play failed:', error));
+            video2.play().catch(error => console.log('Video play failed:', error));
         });
 
         next8Btn.addEventListener('click', () => {
